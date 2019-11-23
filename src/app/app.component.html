@@ -1,20 +1,19 @@
 <div class="app">
-  <input 
-    type="text"
-    [value]="name"
-    (input)="handleChange($event.target.value)"
-  >
+  <h3>Airline Passengers</h3>
+  <!-- for of loop -->
+  <ul>
+    <li *ngFor="let passenger of passengers; let i=index;"> 
+      {{ i }}: {{ passenger.fullname }}
+    </li>
+  </ul>
 
-  <!-- Structural directive -->
-  <div *ngIf="name.length > 2">
-    Searching for... {{ name }}
-  </div>
+  <!-- This compiles to as follows -->
 
-  <!-- This compiles down to as below: -->
-
-  <ng-template [ngIf]="name.length > 2">
-    <div>
-      Searching for... {{ name }}
-    </div>    
-  </ng-template>
+  <h3>Airline Passengers</h3>
+  <!-- for of loop -->
+  <ul>
+    <ng-template ngFor let-passenger let-i="index" [ngForOf]="passengers">
+      <li> {{ i+1 }}: {{ passenger.fullname }}</li>
+    </ng-template>
+  </ul>
 </div>
