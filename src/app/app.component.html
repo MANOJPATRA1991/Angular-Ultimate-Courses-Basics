@@ -13,6 +13,10 @@
         <!-- Chaining of pipes -->
         Check in date: {{ passenger.checkInDate ? (passenger.checkInDate | date: 'd MMM, y' | uppercase) : 'Not checked in' }}
       </div>
+      <div class="children">
+        <!-- Safe navigation operator -->
+        Children: {{ passenger.children?.length || 0}}
+      </div>
     </li>
   </ul>
 </div>
