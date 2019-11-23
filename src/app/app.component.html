@@ -1,3 +1,7 @@
 <div class="app">
-  {{ title }}
+  <h1>{{ title }}</h1>
+  <!-- One way data flow syntax (property binding) from component to template -->
+  <h1 [innerHtml]="title"></h1>
+  <img [src]="logo">
+  <input type="text" [value]="name">
 </div>
