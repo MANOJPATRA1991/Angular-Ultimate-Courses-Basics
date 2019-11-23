@@ -14,11 +14,8 @@ export class AppComponent {
     this.title = "Ultimate Angular";
   }
 
-  handleChange(value: string) {
+  handleClick(value: string) {
+    console.log(value);
     this.name = value;
-  }
-
-  handleClick() {
-    this.name = 'Patra';
   }
 }

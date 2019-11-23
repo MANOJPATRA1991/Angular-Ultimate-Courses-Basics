@@ -2,12 +2,10 @@ import { NgModule } from '@angular/core';
 // Needed if we are implementing a browser app
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-// Allows two-way data binding
-import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  imports: [ BrowserModule, CommonModule, FormsModule ],
+  imports: [ BrowserModule, CommonModule ],
   // Components that belong to this module
   // Declarables: components, directives and pipes
   // Declarables must belong to exactly one module
