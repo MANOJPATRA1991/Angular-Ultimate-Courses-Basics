@@ -14,13 +14,8 @@ export class AppComponent {
     this.title = "Ultimate Angular";
   }
 
-  handleBlur(event: any) {
-    this.name = event.target.value;
-    console.log(event);
-  }
-
-  handleInput(event: any) {
-    this.name = event.target.value;
+  handleChange(value: string) {
+    this.name = value;
   }
 
   handleClick() {

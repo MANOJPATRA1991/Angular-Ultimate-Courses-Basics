@@ -2,15 +2,19 @@
   <!-- One way data flow syntax (property binding) from component to template -->
   <h1 [innerHtml]="title"></h1>
   <img [src]="logo">
-  <!-- Two way data binding (Event binding) -->
   <button (click)="handleClick()">
     Change name
   </button>
+  <!-- Real Two way data binding -->
   <input 
     type="text" 
-    [value]="name"
-    (input)="handleInput($event)"
-    (blur)="handleBlur($event)"
+    [ngModel]="name"
+    (ngModelChange)="handleChange($event)"
+  >
+  <!-- Short alternate way for two way data binding -->
+  <input 
+    type="text" 
+    [(ngModel)]="name"
   >
   <p>{{ name }}</p>
 </div>
