@@ -3,9 +3,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
+import { PassengerDashboardModule } from './passenger-dashboard/passenger-dashboard.module';
 
 @NgModule({
-  imports: [ BrowserModule, CommonModule ],
+  imports: [ 
+    // Angular modules
+    BrowserModule, 
+    CommonModule,
+    // Custom modules
+    PassengerDashboardModule
+  ],
   // Components that belong to this module
   // Declarables: components, directives and pipes
   // Declarables must belong to exactly one module

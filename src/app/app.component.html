@@ -1,22 +1,3 @@
 <div class="app">
-  <h3>Airline Passengers</h3>
-  <ul>
-    <li *ngFor="let passenger of passengers; let i=index;">
-      <span 
-        class="status"
-        [style.backgroundColor]="(passenger.checkedIn ? '#2ecc71' : '#c0392b')"
-      ></span> 
-      {{ i }}: {{ passenger.fullname }}
-      <!-- Using pipes -->
-      <p>{{ passenger | json }}</p>
-      <div class="date">
-        <!-- Chaining of pipes -->
-        Check in date: {{ passenger.checkInDate ? (passenger.checkInDate | date: 'd MMM, y' | uppercase) : 'Not checked in' }}
-      </div>
-      <div class="children">
-        <!-- Safe navigation operator -->
-        Children: {{ passenger.children?.length || 0}}
-      </div>
-    </li>
-  </ul>
+  <app-passenger-dashboard></app-passenger-dashboard>
 </div>
