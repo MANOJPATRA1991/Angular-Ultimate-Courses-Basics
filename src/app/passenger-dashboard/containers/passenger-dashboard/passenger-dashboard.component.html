@@ -2,6 +2,9 @@
   <app-passenger-count
     [items]="passengers">
   </app-passenger-count>
+  <div *ngFor="let passenger of passengers;">
+    {{ passenger.fullname }}
+  </div>
   <app-passenger-detail
     *ngFor="let passenger of passengers;"
     [detail]="passenger"
