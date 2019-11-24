@@ -1,0 +1,14 @@
+<div>
+  <span class="status" [class.checked-in]="detail.checkedIn"></span> 
+  {{ detail.fullname }}
+  <!-- Using pipes -->
+  <p>{{ detail | json }}</p>
+  <div class="date">
+    <!-- Chaining of pipes -->
+    Check in date: {{ detail.checkInDate ? (detail.checkInDate | date: 'd MMM, y' | uppercase) : 'Not checked in' }}
+  </div>
+  <div class="children">
+    <!-- Safe navigation operator -->
+    Children: {{ detail.children?.length || 0}}
+  </div>
+</div>
