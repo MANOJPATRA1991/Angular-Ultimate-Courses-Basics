@@ -1,8 +1,16 @@
 <div>
-  <span class="status" [class.checked-in]="detail.checkedIn"></span> 
-  {{ detail.fullname }}
-  <!-- Using pipes -->
-  <p>{{ detail | json }}</p>
+  <span class="status" [class.checked-in]="detail.checkedIn"></span>
+  <div *ngIf="editing">
+    <input 
+      type="text" 
+      [value]="detail.fullname"
+      (input)="onNameChange(name.value)"
+      #name
+    >
+  </div> 
+  <div *ngIf="!editing">
+    {{ detail.fullname }}
+  </div>
   <div class="date">
     <!-- Chaining of pipes -->
     Check in date: {{ detail.checkInDate ? (detail.checkInDate | date: 'd MMM, y' | uppercase) : 'Not checked in' }}
@@ -11,4 +19,10 @@
     <!-- Safe navigation operator -->
     Children: {{ detail.children?.length || 0}}
   </div>
+  <button (click)="toggleEdit()">
+    {{ editing ? 'Done' : 'Edit' }}
+  </button>
+  <button (click)="onRemove()">
+    Remove
+  </button>
 </div>
