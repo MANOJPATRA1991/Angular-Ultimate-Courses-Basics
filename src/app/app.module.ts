@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 // Needed if we are implementing a browser app
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './database/in-memory-data.service';
 import { AppComponent } from './app.component';
 import { PassengerDashboardModule } from './passenger-dashboard/passenger-dashboard.module';
 
@@ -10,6 +13,10 @@ import { PassengerDashboardModule } from './passenger-dashboard/passenger-dashbo
     // Angular modules
     BrowserModule, 
     CommonModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    ),
     // Custom modules
     PassengerDashboardModule
   ],
@@ -19,6 +26,7 @@ import { PassengerDashboardModule } from './passenger-dashboard/passenger-dashbo
   declarations: [ AppComponent ],
   // Only the root module contains the bootstrap component
   // AppComponent is the root component that Angular creates and inserts into the index.html host web page.
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  providers: [InMemoryDataService]
 })
 export class AppModule { }

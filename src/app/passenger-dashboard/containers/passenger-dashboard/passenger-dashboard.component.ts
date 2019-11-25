@@ -18,7 +18,8 @@ export class PassengerDashboardComponent implements OnInit {
 
   // Data fetching should be done here
   ngOnInit() {
-    this.passengers = this.passengerService.getPassengers();
+    this.passengerService.getPassengers()
+    .subscribe((data: Passenger[]) => this.passengers = data);
   }
 
   handleEdit(event: Passenger) {
