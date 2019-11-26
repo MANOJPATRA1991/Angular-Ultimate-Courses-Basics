@@ -9,6 +9,7 @@ import { PassengerCountComponent } from './components/passenger-count/passenger-
 import { PassengerDetailComponent } from './components/passenger-detail/passenger-detail.component';
 // Service
 import { PassengerDashboardService } from './passenger-dashboard.service';
+import { PassengerViewerComponent } from './containers/passenger-viewer/passenger-viewer.component';
 
 @NgModule({
   imports: [ 
@@ -17,12 +18,16 @@ import { PassengerDashboardService } from './passenger-dashboard.service';
   ],
   // Holds all modules relaative to this module
   declarations: [
+    // Containers
     PassengerDashboardComponent,
+    PassengerViewerComponent,
+    // Components
     PassengerCountComponent,
     PassengerDetailComponent
   ],
   exports: [
-    PassengerDashboardComponent
+    PassengerDashboardComponent,
+    PassengerViewerComponent
   ],
   // Make the service available to any of the components.
   // This is done through Dependency Injection (DI)
