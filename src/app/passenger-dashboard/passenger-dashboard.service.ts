@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from "rxjs/operators";
+import { Observable, throwError } from 'rxjs';
+import { map, catchError } from "rxjs/operators";
 import  { Passenger } from './models/passenger.interface';
 
 
@@ -14,7 +14,11 @@ export class PassengerDashboardService {
 
   // GET
   getPassengers(): Observable<Passenger[]> {
-    return this.http.get<Passenger[]>(PASSENGERS_API);
+    return this.http.get<Passenger[]>(PASSENGERS_API)
+    .pipe(
+      map((response: Passenger[]) => response),
+      catchError((error: any) => Observable.throw(error.json()))
+    );
   }
 
   // UPDATE
@@ -27,11 +31,19 @@ export class PassengerDashboardService {
       headers: headers
     }
 
-    return this.http.put<Passenger>(`${PASSENGERS_API}/${passenger.id}`, passenger, options);
+    return this.http.put<Passenger>(`${PASSENGERS_API}/${passenger.id}`, passenger, options)
+    .pipe(
+      map((response: Passenger) => response),
+      catchError((error: any) => Observable.throw(error.json()))
+    );
   }
 
   // DELETE
   removePassenger(passenger: Passenger): Observable<Passenger> {
-    return this.http.delete<Passenger>(`${PASSENGERS_API}/${passenger.id}`);
+    return this.http.delete<Passenger>(`${PASSENGERS_API}/${passenger.id}`)
+    .pipe(
+      map((response: Passenger) => response),
+      catchError((error: any) => Observable.throw(error.json()))
+    );
   }
 }
