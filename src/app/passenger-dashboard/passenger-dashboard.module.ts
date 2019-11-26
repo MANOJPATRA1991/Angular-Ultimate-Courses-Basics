@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // Containers
 import { PassengerDashboardComponent } from './containers/passenger-dashboard/passenger-dashboard.component';
@@ -10,20 +11,23 @@ import { PassengerDetailComponent } from './components/passenger-detail/passenge
 // Service
 import { PassengerDashboardService } from './passenger-dashboard.service';
 import { PassengerViewerComponent } from './containers/passenger-viewer/passenger-viewer.component';
+import { PassengerFormComponent } from './components/passenger-form/passenger-form.component';
 
 @NgModule({
   imports: [ 
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  // Holds all modules relaative to this module
+  // Holds all modules relative to this module
   declarations: [
     // Containers
     PassengerDashboardComponent,
     PassengerViewerComponent,
     // Components
     PassengerCountComponent,
-    PassengerDetailComponent
+    PassengerDetailComponent,
+    PassengerFormComponent
   ],
   exports: [
     PassengerDashboardComponent,
