@@ -12,7 +12,7 @@ export class InMemoryDataService implements InMemoryDbService {
         fullname: 'Stephen',
         checkedIn: true,
         checkInDate: 1490742000000,
-        baggage: ""
+        baggage: "none"
       },
       {
         id: 2,
