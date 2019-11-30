@@ -1,5 +1,5 @@
 <!-- Template driven form: Template is the source of truth -->
-<form #form="ngForm" novalidate>
+<form (ngSubmit)="handleSubmit(form.value, form.valid)" #form="ngForm" novalidate>
   {{ detail | json }}
   <div>
     Passenger name:
