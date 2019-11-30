@@ -9,7 +9,7 @@ export class InMemoryDataService implements InMemoryDbService {
     const passengers = [
       {
         id: 1,
-        fullname: '',
+        fullname: 'Stephen',
         checkedIn: true,
         checkInDate: 1490742000000,
         baggage: "none"
