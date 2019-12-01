@@ -12,9 +12,11 @@ import { AppComponent } from './app.component';
 import { PassengerDashboardModule } from './passenger-dashboard/passenger-dashboard.module';
 
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: '**', component: NotFoundComponent },
 
 ];
 
@@ -36,7 +38,7 @@ const routes: Routes = [
   // Declarables must belong to exactly one module
   declarations: [ 
     AppComponent, 
-    HomeComponent 
+    HomeComponent, NotFoundComponent 
   ],
   // Only the root module contains the bootstrap component
   // AppComponent is the root component that Angular creates and inserts into the index.html host web page.
