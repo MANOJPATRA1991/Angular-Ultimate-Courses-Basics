@@ -2,9 +2,12 @@ import { NgModule } from '@angular/core';
 // Needed if we are implementing a browser app
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './database/in-memory-data.service';
+
 import { AppComponent } from './app.component';
 import { PassengerDashboardModule } from './passenger-dashboard/passenger-dashboard.module';
 
@@ -14,6 +17,7 @@ import { PassengerDashboardModule } from './passenger-dashboard/passenger-dashbo
     BrowserModule, 
     CommonModule,
     HttpClientModule,
+    RouterModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
