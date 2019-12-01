@@ -8,6 +8,7 @@
   <app-passenger-detail
     *ngFor="let passenger of passengers;"
     [detail]="passenger"
+    (view)="handleView($event)"
     (edit)="handleEdit($event)"
     (remove)="handleRemove($event)">
   </app-passenger-detail>

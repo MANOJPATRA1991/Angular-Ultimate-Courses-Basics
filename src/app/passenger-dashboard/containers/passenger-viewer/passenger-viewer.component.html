@@ -1,4 +1,7 @@
 <div>
+  <button (click)="goBack()">
+    &lsaquo; Go back
+  </button>
   <app-passenger-form
     [detail]="passenger"
     (update)="onUpdatePassenger($event)"

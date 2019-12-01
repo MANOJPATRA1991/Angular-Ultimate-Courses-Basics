@@ -31,4 +31,8 @@ export class PassengerViewerComponent implements OnInit {
       .subscribe((data: Passenger) => this.passenger = Object.assign({}, this.passenger, event));
   }
 
+  goBack() {
+    // Imperative routing as we are using the native API rather than something like routerLink
+    this.router.navigate(['/passengers']);
+  }
 }
